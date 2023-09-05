@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra-Curricular</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@100;200&display=swap');
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .slider-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+            position: relative;
+        }
+
+        .slides img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slides::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the overlay darkness */
+        }
+
+        .slider-header {
+            text-align: center;
+            color: #FFF;
+            font-size: 36px;
+            font-weight: bold;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 250px;
+            left: 0;
+            width: 100%;
+        }
+
+        .slider-container .slider-bullets {
+            text-align: center;
+            margin-top: 20px; /* Add spacing between images and dots */
+        }
+
+        .slider-container .slider-bullets .dots {
+            display: inline-block;
+            padding: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #808080;
+            border-radius: 50%;
+            margin: 5px; /* Add margin to separate the dots */
+        }
+
+        .slider-container .slider-bullets .dots:hover {
+            background-color: #383838;
+            cursor: pointer;
+        }
+
+        .slider-container .slider-bullets .active {
+            background-color: #383838;
+        }
+
+        .slider-caption {
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            color: #FFF;
+            padding: 10px;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu bar container */
+        .menu-bar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show menu bar on hover anywhere on the screen */
+        body:hover .menu-bar {
+            opacity: 1;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-item {
+            margin: 15px 0; /* Increase line spacing between menu items */
+            text-align: right;
+        }
+
+        .menu-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-link:hover {
+            color: #ff8c00; /* Change color on hover */
+        }
+
+        .academics-box {
+            height: 300px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            width: calc(50% - 20px); /* Make each achievement box 50% wide with some spacing */
+            margin: 10px;
+        }
+
+        .academics-title {
+            font-size: 48px; /* Increase font size for the title */
+            font-weight: bold;
+            text-align: center; /* Center-align the title */
+            margin-top: 20px; /* Add space at the top */
+        }
+
+        .academics-box:hover {
+            background-image: url("images.jpg"); /* Replace with your hover image URL */
+            background-size: cover;
+        }
+
+        .academics-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .academics-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .academics-year,
+        .academics-score {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .academics-container {
+            display: flex;
+            flex-wrap: wrap; /* Wrap to the next line if necessary */
+            justify-content: space-between; /* Space them evenly */
+            max-width: 1000px; /* Adjust as needed */
+            margin: 0 auto; /* Center-align the container */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slides fade">
+            <img src="dsc2.png" alt="background_1">
+            <div class="slider-caption"></div>
+        </div> <!-- slider -->
+    
+        <div class="slides fade">
+            <img src="hod.jpg" alt="background_2">
+            <div class="slider-caption"></div>
+        </div> <!-- slider -->
+    
+        <div class="slides fade">
+            <img src="videoedit.jpg" alt="background_3">
+            <div class="slider-caption"></div>
+        </div> <!-- slider -->
+    
+        <div class="slides fade">
+            <img src="bg2.jpg" alt="background_4">
+            <div class="slider-caption"></div>
+        </div> <!-- slider -->
+
+        <div class="slider-header">Extra-Curricular</div>
+    
+        <!-- Slider Next and Previous buttons -->
+        <a class="prev" onclick="plusIndex(-1)">❮</a>
+        <a class="next" onclick="plusIndex(+1)">❯</a>
+    
+        <!-- Slider Selection Bullets -->
+        <div class="slider-bullets" id="slider-bullets">
+            <span class="dots" onclick="currentSlide(1)"></span>
+            <span class="dots" onclick="currentSlide(2)"></span>
+            <span class="dots" onclick="currentSlide(3)"></span>
+            <span class="dots" onclick="currentSlide(4)"></span>
+        </div> <!-- Slider Bullets -->
+    </div>
+
+
+    <div class="menu-bar">
+        <ul class="menu-list">
+            <li class="menu-item"><a href="index.html" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="about.html" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="academics.html" class="menu-link">Academics</a></li>
+            <li class="menu-item"><a href="extracurricular.html" class="menu-link">Extra-Curriculars</a></li>
+            <li class="menu-item"><a href="contact.html" class="menu-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="academics-title">Academics</div>
+    <div class="academics-container">
+
+        <!-- Academic Achievement 1 -->
+        <div class="academics-box">
+            <div class="academics-content">
+                <div class="academics-heading">Deputy Zonal Secretary </div>
+                <div class="academics-year">DSC Sports Council,IITM</div>
+                <div class="academics-year">August,2023-Current</div>
+                <div class="academics-score">fill in</div>
+            </div>
+        </div>
+
+        <!-- Academic Achievement 2 -->
+        <div class="academics-box">
+            <div class="academics-content">
+                <div class="academics-heading">HOD-Creative and Design Team</div>
+                <div class="academics-year">Deva-Bhasha Sanskrit Society,IITM </div>
+                <div class="academics-year">May,2023-Current</div>
+                <div class="academics-score">fill</div>
+            </div>
+        </div>
+
+        <!-- Academic Achievement 3 -->
+        <div class="academics-box">
+            <div class="academics-content">
+                <div class="academics-heading">Member</div>
+                <div class="academics-year">JITSIE,IITM</div>
+                <div class="academics-score">Fill in</div>
+            </div>
+        </div>
+
+        <div class="academics-box">
+            <div class="academics-content">
+                <div class="academics-heading">Core Member</div>
+                <div class="academics-year">Multimedia and Design Team-PARADOX</div>
+                <div class="academics-score"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var slideIndex = 1;
+        var autoSlideInterval; // Variable to store the interval ID for auto slide
+
+        function showImage(n) {
+            var slides = document.getElementsByClassName('slides');
+            var dots = document.getElementsByClassName('dots');
+            
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+            
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            dots[slideIndex - 1].className += ' active';
+        }
+
+        function plusIndex(n) {
+            showImage(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showImage(slideIndex = n);
+        }
+
+        function autoSlide() {
+            plusIndex(1);
+        }
+
+        autoSlideInterval = setInterval(autoSlide, 1000); // Change the interval duration (in milliseconds) as needed
+        showImage(slideIndex);
+    </script>
+</body>
+</html>

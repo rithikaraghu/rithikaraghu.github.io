@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@100;200&display=swap');
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Menu bar container */
+        .menu-bar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show menu bar on hover anywhere on the screen */
+        body:hover .menu-bar {
+            opacity: 1;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-item {
+            margin: 15px 0; /* Increase line spacing between menu items */
+            text-align: right;
+        }
+
+        .menu-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-link:hover {
+            color: #ff8c00; /* Change color on hover */
+        }
+
+        .academics-box {
+            width: 500px;
+            height: 300px;
+            background-color: #333;
+            margin: 20px auto; /* Center-align and provide spacing */
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .academics-title {
+            font-size: 48px; /* Increase font size for the title */
+            font-weight: bold;
+            text-align: center; /* Center-align the title */
+            margin-top: 20px; /* Add space at the top */
+        }
+
+        .academics-box:hover {
+            background-image: url("images.jpg"); /* Replace with your hover image URL */
+            background-size: cover;
+        }
+
+        .academics-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .academics-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .academics-year,
+        .academics-score {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <ul class="menu-list">
+            <li class="menu-item"><a href="index.html" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="about.html" class="menu-link">About</a></li>
+            <li class="menu-item"><a href="academics.html" class="menu-link">Academics</a></li>
+            <li class="menu-item"><a href="extracurricular.html" class="menu-link">Extra-Curriculars</a></li>
+            <li class="menu-item"><a href="contact.html" class="menu-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="academics-title">Academics</div>
+
+    <!-- Academic Achievement 1 -->
+    <div class="academics-box">
+        <div class="academics-content">
+            <div class="academics-heading">CLASS X</div>
+            <div class="academics-year">DELHI PUBLIC SCHOOL</div>
+            <div class="academics-year">Year: 2020</div>
+            <div class="academics-score">Score: 96%</div>
+        </div>
+    </div>
+
+    <!-- Academic Achievement 2 -->
+    <div class="academics-box">
+        <div class="academics-content">
+            <div class="academics-heading">CLASS XII</div>
+            <div class="academics-year">SMT.SULOCHANADEVI SINGHANIA SCHOOL </div>
+            <div class="academics-year">Year: 2022</div>
+            <div class="academics-score">Score: 98%</div>
+        </div>
+    </div>
+
+    <!-- Academic Achievement 3 -->
+    <div class="academics-box">
+        <div class="academics-content">
+            <div class="academics-heading">IIT MADRAS</div>
+            <div class="academics-year">CURRENT</div>
+            <div class="academics-score"></div>
+        </div>
+    </div>
+
+    <div class="academics-box">
+        <div class="academics-content">
+            <div class="academics-heading">Achievements</div>
+            <div class="academics-year">IISC scholarship awarded</div>
+            <div class="academics-score"></div>
+        </div>
+    </div>
+</body>
+</html>
